@@ -1,0 +1,1153 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Color pallete */
+:root {
+    --primary-color: #2584ff;
+    --secondary-color: #00d9ff;
+    --color-accent: #ff3400;
+    --headings-color: #1b0760;
+    --body-color: #918ca4;
+    --body-darker-color: #5c5577;
+    --box-shadow-color: rgb(223, 221, 221);
+    --white-color: #fff;
+    font-size: 62.5%;
+}
+
+/* Typograpghy */
+body {
+    font-family: Nunito, Arial, Helvetica, sans-serif;
+    font-size: 2.4rem;
+    color: var(--body-color);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Nunito sans";
+    color: var(--headings-color);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+    }
+
+    h2 {
+        font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #7b858b;
+}
+
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.fa-arrow-right {
+    transition: margin .15s;
+}
+
+.link-hover:hover .fa-arrow-right {
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+        font-size: 1.5rem;
+    }
+}
+
+/* Badges */
+.badge {
+    border-radius: 20px;
+    font-size: 2rem;
+    /* 2rem for the font-size of normal text in the body. */
+    font-weight: 700;
+    padding: .5rem 2rem;
+    white-space: nowrap;
+}
+
+.badge--primary {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+}
+
+.badge--secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.badge--small {
+    font-size: 1.6rem;
+    /* For smaller badges. */
+    padding: 0.5rem 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.7rem;
+    }
+
+    .badge--small {
+        font-size: 1.2rem;
+    }
+}
+
+/* Lists */
+.list {
+    list-style: none;
+    padding-left: 0;
+    color: var(--headings-color);
+}
+
+.list--inline .list__item {
+    display: inline-block;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.list--tick .list__item {
+    font-weight: 500;
+    margin: 2rem 0;
+}
+
+.list--tick .list__item::before {
+    /* We can also apply this list image of svg file by applying the list-style-image property for ul(element) no to li(elements).  */
+    content: "";
+    display: inline-block;
+    height: 2rem;
+    width: 1.5rem;
+    background: url(../Images/tick-mark-icon.svg) no-repeat;
+    background-position: left center;
+    margin: 0 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .list--tick .list__item::before {
+        height: 1.5rem;
+        width: 1.3rem;
+        margin-right: .5rem;
+    }
+}
+
+/* Icons */
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icon--primary {
+    fill: var(--primary-color);
+}
+
+.icon--white {
+    fill: white;
+}
+
+.icon--darkcyan {
+    fill: darkcyan;
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    background-color: #f3f9fa;
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+/* For icons, the size is always same in all the devices. S0, we have not implemented the media queries. */
+
+/* Buttons */
+.btn {
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 2rem 3vw;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 1rem 0;
+}
+
+.btn--accent {
+    background-color: var(--color-accent);
+    color: #f3f9fa;
+}
+
+.btn--stretched {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.btn--accent:hover {
+    background-color: rgba(255, 52, 0, 0.8);
+}
+
+.btn--headings-color {
+    color: var(--headings-color);
+    background-color: transparent;
+    border: #1b0760 2.7px solid;
+    font-weight: 700;
+    transition: font-weight .25s, color .25s, background-color .25s;
+}
+
+.btn--primary {
+    background-color: var(--primary-color);
+    color: #f3f9fa;
+}
+
+.btn--primary:hover {
+    background-color: rgba(37, 132, 255, 0.8);
+}
+
+.btn--secondary {
+    background-color: var(--secondary-color);
+    color: #f3f9fa;
+}
+
+.btn--secondary:hover {
+    background-color: rgba(0, 217, 255, 0.7);
+}
+
+.btn--block {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Inputs */
+.input {
+    border-radius: 30px;
+    border: 0 solid white;
+    color: var(--headings-color);
+    font-size: 2rem;
+    padding: 1.5rem 3.2rem;
+    width: 0;
+    transition: border .2s;
+}
+
+.input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    color: #cfcdd4;
+    letter-spacing: .3px;
+}
+
+@media screen and (min-width: 1024px) {
+    .input {
+        font-size: 1.7rem;
+    }
+}
+
+/* Input groups: Inputs + buttons */
+.input-group {
+    display: flex;
+    margin: 2rem;
+    box-shadow: 0 0 30px 5px rgb(223, 221, 221);
+    border: 0 solid white;
+    border-radius: 30px;
+    transition: border .2s;
+}
+
+.input-group:focus-within {
+    border: #ff33007b 2px solid;
+}
+
+.input-group .input {
+    flex-grow: 1;
+    /*This property is used to move the button right of the input-group container.*/
+}
+
+.input-group .btn {
+    margin: 6px;
+}
+
+/* Cards */
+.card-container {
+    margin: 3rem;
+    width: 50%;
+}
+
+.card {
+    border-radius: 7px;
+    box-shadow: 0 0 20px 10px rgb(223, 221, 221);
+    overflow: hidden;
+    /*Overflow is applied to parent element of header section 
+    to apply border radius that merges with the parent.*/
+}
+
+.card__header,
+.card__body {
+    text-align: start;
+    position: relative;
+    padding: 3rem 4.5rem;
+}
+
+.card--primary .card__header {
+    /* border: 2px solid dodgerblue; 
+    set the border-radius property equal to the parent container then, 
+    If we apply border of the color matching to header color and 
+    also we can get the soft corners in the header corners without using overflow property. */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.card--secondary .card__header {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+.card--secondary .badge--secondary {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+/* Plans */
+.plan__name {
+    color: var(--white-color);
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+
+.plan__price {
+    font-size: 6rem;
+}
+
+.plan__billing-cycle {
+    font-size: 2.4rem;
+    opacity: 0.8;
+    font-weight: 300;
+    margin: 0 1rem;
+}
+
+.plan__description {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.plan .btn--headings-color:hover {
+    background-color: var(--headings-color);
+    color: var(--white-color);
+}
+
+@media screen and (min-width: 1024px) {
+    .plan__name {
+        font-size: 1.4rem;
+    }
+
+    .plan__price {
+        font-size: 5rem;
+    }
+
+    .plan__billing-cycle {
+        font-size: 1.6rem;
+    }
+}
+
+/* Popular tag for plans */
+.card__header img {
+    position: absolute;
+    max-width: 6rem;
+    display: inline-block;
+    top: 4.5%;
+    left: 84.5%;
+}
+
+@media screen and (min-width: 942px) {
+    .card__header img {
+        left: 84.55%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card__header img {
+        left: 75.55%;
+    }
+}
+
+@media screen and (min-width: 1190px) {
+    .card__header img {
+        left: 78.5%;
+    }
+}
+
+/* Media objects */
+.media {
+    display: flex;
+}
+
+.media__body {
+    margin-left: 2rem;
+}
+
+.media__heading {
+    margin: 0;
+}
+
+.media__image {
+    margin-top: 1.5rem;
+}
+
+/* Quotes */
+.quote {
+    font-size: 3rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--body-darker-color);
+    line-height: 1.3;
+    margin: 2rem 0;
+}
+
+.quote__text {
+    text-align: left;
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.quote__text::before {
+    content: open-quote;
+}
+
+.quote__text::after {
+    content: close-quote;
+}
+
+.quote .media {
+    font-style: normal;
+}
+
+.quote .media__heading {
+    letter-spacing: .3px;
+    font-family: Nunito;
+    text-align: left;
+}
+
+.quote .media__body-content {
+    text-align: left;
+    margin-top: 4px;
+    font-size: 2rem;
+    opacity: .4;
+    letter-spacing: .7px;
+}
+
+.quote .media__image {
+    margin-top: .2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .quote {
+       margin: 2.5rem 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .quote {
+        font-size: 2rem;
+    }
+
+    .quote .media__heading {
+        letter-spacing: .1px;
+        font-size: 2.4rem;
+    }
+
+    .quote .media__body-content {
+        font-size: 1.6rem;
+        letter-spacing: .6px;
+    }
+}
+
+/* Grids */
+.grid {
+    display: grid;
+}
+
+@media screen and (min-width: 768px) {
+    .grid--1x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .grid--1x2-1024 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Testimonials */
+.testimonial {
+    margin: 5rem;
+    padding: 3rem;
+}
+
+.testimonial__image-container {
+    position: relative;
+}
+
+.testimonial__image {
+    object-fit: cover;
+    max-height: 460px;
+    width: 100%;
+}
+
+.testimonial__image-container>.icon-container {
+    position: absolute;
+    top: 3rem;
+    right: -3.2rem;
+    background-color: rgba(240, 229, 216, .6);
+}
+
+@media screen and (min-width: 768px) {
+
+    .testimonial .quote,
+    .testimonial .media__heading {
+        font-size: 2.5rem;
+    }
+}
+
+/* CallOuts */
+.callout {
+    margin: 0 5rem 10rem 5rem;
+    padding: 4rem;
+    border-radius: 5px;
+}
+
+.callout--primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+.callout__heading {
+    margin: 0 auto 1.2rem auto;
+    font-size: 4.5rem;
+    line-height: 50px;
+}
+
+.callout__button {
+    align-self: center;
+    justify-self: center;
+    margin: 1.2rem 0;
+}
+
+.callout__content {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .callout .grid--1x2 {
+        grid-template-columns: 1fr auto;
+    }
+
+    .callout__content {
+        text-align: left;
+        font-size: 2rem;
+    }
+
+    .callout__heading {
+        font-size: 3.5rem;
+    }
+
+    .callout__button {
+        justify-self: start;
+        margin-left: 4rem;
+    }
+}
+
+/* Space for collapsibles */
+
+.collapsible__label,
+.collapsible__label2,
+.collapsible__label3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapsible__label .collapsible__heading,
+.collapsible__label2 .collapsible__heading2,
+.collapsible__label3 .collapsible__heading3 {
+    text-transform: uppercase;
+    color: whitesmoke;
+    letter-spacing: .5px;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.collapsible__label img,
+.collapsible__label2 img,
+.collapsible__label3 img {
+    width: 35px;
+    height: 35px;
+    margin: auto 0;
+    transition: transform 0.15s;
+}
+
+.wrap--collapsible .collapsible__content,
+.wrap--collapsible2 .collapsible__content2,
+.wrap--collapsible3 .collapsible__content3 {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    /* We can also achieve this using display property. 
+    That is initially display is "none" and when we checked on input element, the display should be "block".*/
+    opacity: 0;
+    text-align: left;
+}
+
+.collapsible__input,
+.collapsible__input2,
+.collapsible__input3 {
+    display: none;
+}
+
+.collapsible__input:checked+.collapsible__label+.collapsible__content,
+.collapsible__input2:checked+.collapsible__label2+.collapsible__content2, 
+.collapsible__input3:checked+.collapsible__label3+.collapsible__content3 {
+    margin: .5rem 0;
+    max-height: 500px;
+    opacity: 1;
+}
+
+.collapsible__input:checked+.collapsible__label img,
+.collapsible__input2:checked+.collapsible__label2 img,
+.collapsible__input3:checked+.collapsible__label3 img {
+    transform: rotate(90deg);
+}
+
+.collapsible__content .collapsible__link,
+.collapsible__content2 .collapsible__link,  
+.collapsible__content3 .collapsible__link  {
+    font-size: 2rem;
+    margin-bottom: 0;
+    transition: color .25s;
+}
+
+.collapsible__link:hover {
+    color: whitesmoke;
+}
+
+.nav.wrap--collapsible .collapsible__content {
+    transition: opacity .3s, max-height .15s;
+}
+
+/* Blocks */
+.block {
+    --padding-vertical: 6rem;
+    padding: var(--padding-vertical) 2rem;
+    text-align: center;
+}
+
+.block__heading {
+    margin-top: 0;
+}
+
+.block--darker {
+    background-color: #000;
+    color: #7b858b;
+}
+
+.block--darker .block__heading {
+    color: whitesmoke;
+}
+
+.block--skewed-right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+    margin: 1rem auto;
+}
+
+.block--skewed-left {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* .block--practice {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    background-color: grey;
+    clip-path: polygon(50% 10%, 0 100%, 100% 100%);
+} */
+
+/* Navigation-bars */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding-top: .5rem;
+}
+
+/* Logo section in nav bar */
+.nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.logo__img {
+    width: 120px;
+}
+
+.nav .logo :nth-child(2) {
+    font-family: "nunito sans";
+    color: whitesmoke;
+}
+
+.nav .logo :nth-child(2):active {
+    color: whitesmoke;
+}
+
+.nav .icon {
+    margin: 0 1rem .5rem 0;
+}
+
+/* Nav bar section */
+.nav .icon {
+    opacity: .5;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.nav .icon:active {
+    opacity: 1;
+    box-shadow: 0 0 5px 2px whitesmoke;
+    border-radius: 5px;
+}
+
+.nav .nav__list {
+    width: 100%;
+    color: rgb(129, 125, 125);
+    margin: 0;
+}
+
+.nav__list-item {
+    font-size: 2rem;
+    padding: .7rem;
+    margin-left: 1rem;
+    border-bottom: 1.4px solid rgba(138, 137, 137, 0.216);
+}
+
+.nav__list-item > a {
+    color: rgb(180, 172, 172);
+    transition: color .3s;
+}
+
+.nav__list-item > a:hover {
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .nav {
+        padding: 0 1.3rem;
+        font-size: 1.8rem;
+    }
+
+    .nav .collapsible__label {
+        display: none;
+    }
+
+    .nav .collapsible__content {
+        max-height: 100%;
+        opacity: 1;
+    }
+
+    .nav .nav__list {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        padding-bottom: .2rem;
+    }
+
+    .nav__list > .nav__list-item {
+        border: unset;
+    }
+}
+
+/* Hero section */
+.block.hero {
+    border: unset;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    position: relative;
+    text-align: center;
+}
+
+.hero .grid {
+    row-gap: 4rem;  
+}
+
+.hero__tagline {
+    font-size: 2rem;
+    margin: 2rem 0 5rem 0;
+}
+
+.hero__image {
+   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .hero__content {
+        text-align: left;
+    }
+    
+    .hero .grid {
+        column-gap: 2.5rem;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .hero__image {
+       transform: scale3d(1.5);
+       padding-right: 3rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .hero__image {
+        transform: scale(1.3); 
+    }
+}
+
+/* Domain Block */
+.block__prices-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 6rem 6rem;
+    justify-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.domain__block .input-group {
+    margin: 5rem auto;
+    max-width: 670px;
+}
+
+.domain__block {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .block__prices-list {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        font-weight: bold;
+    }
+}
+
+/* Plans block */
+.plans__container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.plans__header {
+    margin: 0;
+}
+
+.plans__header-section {
+    margin-top: 6rem;
+    margin-bottom: -2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.plans__container h2 {
+    margin-top: 0;
+}
+
+.plans__container .grid {
+    gap: 4rem;
+}
+
+.card--primary .badge--primary {
+    background-color: #15407741;
+}
+
+@media screen and (min-width:1024px) {
+    .plans__container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .plans__header-section {
+        margin-bottom: 2rem;
+    }
+
+    .plans__container .plans__header {
+        margin-top: -2rem;
+        margin-bottom: 6rem;
+    }
+
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6rem;
+        margin: 0 auto;
+    }
+    
+    .card--primary .badge--primary {
+        background-color: #15407741;
+        display: inline-block;
+        margin-bottom: .6rem;
+    }
+    
+    .card--secondary .badge--secondary {
+        display: inline-block;
+        margin-bottom: .6rem;
+    }
+
+    .card--primary {
+        transform: scale(1.1);
+        z-index: 1;
+        margin: 0 1rem;
+        transition: transform .2s;
+    }
+
+    .card--secondary {
+        transition: transform .2s;
+    }
+
+    .card--primary:hover {
+        transform: scale(1.15);
+    }
+    
+    .card--secondary:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Features block */
+article.grid {
+    gap: 5rem;
+    margin: 7rem 3rem 0 3rem;
+    text-align: initial;
+}
+
+article.grid {
+    margin-top: 4rem;
+}
+
+.article__image-container {
+    align-self: center;
+    justify-self: center;
+}
+
+.article__component {
+    justify-self: right;
+}
+
+.article__image-container img {
+    width: 100%;
+    max-width: 570px;
+}
+
+.feature__heading {
+    margin-top: 1.5rem;
+}
+
+@media screen and (min-width:768px) {
+   article.grid {
+    column-gap: 3rem;
+   }
+
+   article.grid:nth-of-type(2n) .article__component {
+        order: 2;
+   }
+}
+
+/* Showcase__block */
+.block-showcase {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    padding-bottom: calc(var(--padding-vertical) + 4rem);
+}
+
+.block-showcase .grid {
+    gap: 3rem;
+}
+
+.block-showcase h3 {
+    color: aliceblue;
+}
+
+.block-showcase .media__image {
+    font-size: 3rem;
+    padding: 0;
+}
+
+.block-showcase .grid img {
+    max-width: 700px;
+    width: 100%;
+}
+
+.block-showcase .grid ul {
+    text-align: left;
+    list-style: none;
+    padding: 2rem;
+}
+
+.block-showcase h3 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: .4px;
+}
+
+@media screen and (min-width:768px) {
+    .block-showcase .grid {
+        grid-template-columns: 50% 50%;
+    }
+
+    .block-showcase .grid img {
+        width: auto;
+        justify-self: end;
+    }
+
+    .block-showcase p {
+        font-size: 2.3rem;
+    }
+
+    .block-showcase .icon {
+       width: 4rem; 
+    }
+}
+
+/* Footer */
+.footer__section::after {
+    content: "";
+    display: block;
+    border: .1px solid whitesmoke;
+    opacity: .5;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer__image {
+    margin-top: 2rem;
+}
+
+.footer__image p {
+    font-size: 1.5rem;
+}
+
+@media screen and (min-width:768px) {
+    .footer__section::after {
+        display: none;
+    }
+
+    .grid--1x4 {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        justify-items: center;
+    }
+
+    .footer__toogle-image {
+        display: none;
+    }
+
+    .footer .collapsible__content, 
+    .footer .collapsible__content2,
+    .footer .collapsible__content3 {
+        max-height: 100%;
+        opacity: 1;
+    }
+
+    .footer .collapsible__heading,
+    .footer .collapsible__heading2,
+    .footer .collapsible__heading3 {
+        margin-bottom: -1rem;
+        font-size: 2rem;
+    }
+
+    .footer .collapsible__list {
+        max-width: 150px;
+    }
+
+    .collapsible__list a li {
+        opacity: .7;
+        transition: opacity .4s;
+    }
+
+    .collapsible__list a li:hover {
+        opacity: 1;
+    }
+
+    .collapsible__list a li {
+        font-size: 1.7rem;
+    }
+
+    .footer__image {
+        margin-top: -.5rem;
+        order: -1;
+    }
+
+    .footer__image p {
+        padding: 0 1.5rem;
+    }
+}
