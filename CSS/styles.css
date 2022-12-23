@@ -26,6 +26,11 @@ body {
     line-height: 1.5;
 }
 
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 h1,
 h2,
 h3 {
@@ -410,7 +415,13 @@ input::placeholder {
     max-width: 6rem;
     display: inline-block;
     top: 4.5%;
-    left: 84.5%;
+    left: 79.5%;
+}
+
+@media screen and (min-width: 420px) {
+    .card__header img {
+        left: 82.55%;
+    }
 }
 
 @media screen and (min-width: 942px) {
@@ -539,6 +550,10 @@ input::placeholder {
     padding: 3rem;
 }
 
+.testimonial .quote__text {
+    font-size: 2.2rem;
+}
+
 .testimonial__image-container {
     position: relative;
 }
@@ -554,6 +569,12 @@ input::placeholder {
     top: 3rem;
     right: -3.2rem;
     background-color: rgba(240, 229, 216, .6);
+}
+
+@media screen and (min-width: 490px) {
+    .testimonial .quote__text {
+        font-size: 2.4rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -592,6 +613,14 @@ input::placeholder {
 .callout__content {
     text-align: center;
     font-size: 2.5rem;
+}
+
+.callout .btn--secondary {
+    width: 0;
+}
+
+.callout p {
+    margin: 1rem auto 1.5rem auto;
 }
 
 @media screen and (min-width: 768px) {
